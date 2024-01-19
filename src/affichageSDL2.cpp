@@ -139,6 +139,7 @@ SDLSimple::SDLSimple () : jeu() {
     }
 
     renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
+    SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
 
     // IMAGES
     im_background.loadFromFile("data/background.png",renderer);
@@ -531,6 +532,7 @@ SDLMulti::SDLMulti () : jeu() {
     }
 
     renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
+    SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
 
     // IMAGES
     im_background.loadFromFile("data/background.png",renderer);
@@ -914,6 +916,7 @@ void SDLMulti::sdlBoucleMulti () {
 
 		// on permute les deux buffers (cette fonction ne doit se faire qu'une seule fois dans la boucle)
         SDL_RenderPresent(renderer);
+        SDL_RenderClear(renderer);
         // delay if necessary to maintain frame rate
         if (elapsed_time < FRAME_TIME) {
             SDL_Delay(FRAME_TIME - elapsed_time);}
