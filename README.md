@@ -13,8 +13,8 @@ Staresiod is a survival game where a player controls a spaceship in an asteroid 
 
 ## Single player Controls
 
-- **z:** Move forward
-- **q:** Turn left
+- **w:** Move forward
+- **a:** Turn left
 - **d:** Turn right
 - **s:** Brake/Reverse
 - **v:** Shoot a projectile
@@ -34,8 +34,8 @@ When selecting the game mode in the menu, it is possible to choose multiplayer m
 
 - **o:** Move forward
 - **k:** Turn left
-- **l:** Turn right
-- **m:** Brake/Reverse
+- **;:** Turn right
+- **l:** Brake/Reverse
 - **p:** Shoot a projectile
 
 ## Compilation/Execution
