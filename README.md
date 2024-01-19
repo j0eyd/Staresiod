@@ -1,17 +1,17 @@
-# Staresiod - Mini-Game Developed as part of the LIFAPCD Course
+# Staresiod
 
 ## Team Members:
 - **Joey David** (ID: 12115771)
 - **Ugo Poupon** (ID: 12020982)
 
 ## Project Repository:
-[Link to the project repository on Forge](https://forge.univ-lyon1.fr/p2020982/projet.git)
+[Link to the original project repository on Forge](https://forge.univ-lyon1.fr/p2020982/projet.git)
 
 ## Overview
 
-Staresiod is a survival game where a player controls a spaceship in an asteroid field. The objective is to stay alive as long as possible by destroying asteroids to maximize the score. The player can move on the screen and shoot projectiles to destroy asteroids of varying sizes.
+Staresiod is a survival game where a player controls a spaceship in an asteroid field. The objective is to stay alive as long as possible while shooting down incoming asteroids to maximize the score. The player can move on the screen and shoot projectiles to destroy asteroids of varying sizes.
 
-## Controls
+## Single player Controls
 
 - **z:** Move forward
 - **q:** Turn left
@@ -43,14 +43,14 @@ When selecting the game mode in the menu, it is possible to choose multiplayer m
 Executables can be generated or updated with the `make` command. Three main functionalities are implemented as executables:
 
 - **bin/jeuSDL:** Launch the game with SDL display.
-- **bin/jeuTexte:** Launch the game with text display (limited features).
+- **bin/jeuTexte:** Launch a bash version of the game (limited features).
 - **bin/test:** Run regression tests for all main classes of the game.
 
 ## Directory Organization
 
 - **bin/:** Contains the executables.
 - **data/:** Contains assets required for SDL mode execution: sprites, textures, animations, etc. Also includes the `highscore.txt` file, where the highest score achieved in the game is stored and updated.
-- **doc/:** Contains Doxygen documentation in `doc/html`, UML class diagram, Gantt chart, and the oral presentation for the defense.
+- **doc/:** Contains Doxygen documentation in `doc/html`, UML class diagram, Gantt chart.
 - **obj/:** Contains object files needed for executable creation.
 - **src/:** Contains the game code (`.h` and `.cpp` files).
   
