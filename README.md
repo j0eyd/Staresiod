@@ -2,7 +2,6 @@
 
 ## Team Members:
 - **Joey David** (ID: 12115771)
-- **Ugo Poupon** (ID: 12020982)
 
 ## Project Repository:
 [Link to the original project repository on Forge](https://forge.univ-lyon1.fr/p2020982/projet.git)
