@@ -156,7 +156,6 @@ void Jeu::getUpdateVaiss() {//update du vaisseau, PV et projectiles.
         Explosion newExplosion = {int(v.getPosObj().getX()),
         int(v.getPosObj().getY()), 0, 0.5};
         explosions.push_back(newExplosion);
-        cout<<"perdu =)"<<endl;
     }
     for(int i = 0; i<(int)v.projectiles.size(); i++){ //update des projectiles
         if(p.getCDActif()>0 && p.getType()==4)
@@ -378,10 +377,10 @@ void Jeu::saveScore() const {
     string line, previousScore;
     infile.open(filename);
     if(getline(infile,previousScore)){
-        cout << "Highscore : " << previousScore << endl;
+        cout << "Highscore: " << previousScore << endl;
     }
     else {
-        cout << "Aucun highscore trouvé. Initialisation à 0" << endl;
+        cout << "No highscore found. Initializing highscore to 0" << endl;
         previousScore = "0";
     }
     infile.close();
@@ -421,5 +420,5 @@ void Jeu::testRegression() {
         assert(vit.getY() >= -25 && vit.getY() <= 25);
 
     }
-    cout << "test de regression jeu : ok" << endl;
+    cout << "Regression test: OK" << endl;
 }

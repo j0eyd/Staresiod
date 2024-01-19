@@ -1,3 +1,15 @@
+# Detect the operating system
+ifeq ($(OS),Windows_NT)
+    # Windows settings
+    CC = g++
+    LDFLAGS = -lmingw32 -lSDL2 -lSDL2_ttf -lSDL2_image -lSDL2_mixer
+else
+    # Linux/Mac settings
+    CC = g++
+    LDFLAGS = -lSDL2 -lSDL2_ttf -lSDL2_image -lSDL2_mixer
+endif
+
+
 all: bin/test bin/jeuTexte bin/jeuSDL
 
 #partie SDL2

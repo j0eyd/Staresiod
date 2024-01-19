@@ -475,8 +475,9 @@ void SDLSimple::sdlBoucle () {
         if (elapsed_time < FRAME_TIME) {
             SDL_Delay(FRAME_TIME - elapsed_time);}
 	}
-    cout << "Score : " << jeu.score << endl;
     jeu.saveScore();
+    cout << "Score : " << jeu.score << endl;
+    
 }
 
 
@@ -921,14 +922,14 @@ void SDLMulti::sdlBoucleMulti () {
         if (elapsed_time < FRAME_TIME) {
             SDL_Delay(FRAME_TIME - elapsed_time);}
 	}
-    cout << "Score de J1 : " << jeu.scoreV << endl;
-    cout << "Score de J2 : " << jeu.scoreW << endl;
+    cout << "Player 1 score: " << jeu.scoreV << endl;
+    cout << "Player 2 score: " << jeu.scoreW << endl;
     if (jeu.scoreV>jeu.scoreW) {
-        cout << "J1 a gagné =)" << endl;
+        cout << "Player 1 won!" << endl;
     } else if (jeu.scoreV<jeu.scoreW) {
-        cout << "J2 a gagné =)" << endl;
+        cout << "Player 2 won!" << endl;
     } else {
-        cout << "Egalité =)" << endl;
+        cout << "Draw!" << endl;
     }
     jeu.saveScore();
 }

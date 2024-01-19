@@ -57,14 +57,14 @@ class Menu {
 		@brief Gère les événements clavier du menu.
 		@param evenement Événement clavier à gérer.
 		*/
-		void gererEvenements(const SDL_Event& evenement);
+		bool gererEvenements(const SDL_Event& evenement);
 		bool multijoueur; /**< Indique si le mode multijoueur est activé. */
 		Terrain t; /**< Terrain du jeu. */
 		/**
 
 		@brief Lance la boucle du menu.
 		*/
-		void menuBoucle();
+		bool menuBoucle();
 	private:
 		/** Renderer SDL pour le menu. */
 		SDL_Renderer* m_renderer;

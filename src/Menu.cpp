@@ -167,28 +167,35 @@ int Menu::obtenirChoix() const {
     return m_choix;
 }
 
-void Menu::gererEvenements(const SDL_Event& evenement) {
+//returns false if quits, true else
+bool Menu::gererEvenements(const SDL_Event& evenement) {
     if (evenement.type == SDL_MOUSEBUTTONDOWN) {
         int mouseX = evenement.button.x;
-        if (mouseX < t.getDimX()/2){
-            m_choix = 0;
-            multijoueur = false;
-            m_selectionEnCours = true;
-        }
-        else if (mouseX > t.getDimX()/2){
-            m_choix = 1;
-        }
-            if (m_choix == 1) {
+        int mouseY = evenement.button.y;
+        if (mouseY > 2*t.getDimY()/3){
+            if (mouseX < t.getDimX()/2){
+                m_choix = 0;
+                multijoueur = false;
+                m_selectionEnCours = true;
+            }
+            else if (mouseX > t.getDimX()/2){
+                m_choix = 1;
                 multijoueur = true;
                 m_selectionEnCours = true;
-                }
+            }
         }
+        else if (mouseX > t.getDimX()/2){
+            m_choix = 2;
+            return true;
+        }
+    }
+    return false;
 }
 
 
 
-void Menu::menuBoucle() {
-    bool terminer = false;
+bool Menu::menuBoucle() {
+    bool terminer = false, quit = false;
     SDL_Texture* menuIm = IMG_LoadTexture(m_renderer, "data/menuImage.png");
     SDL_Texture* menuSP = IMG_LoadTexture(m_renderer, "data/SPSelector.png");
     SDL_Texture* menuMP = IMG_LoadTexture(m_renderer, "data/MPSelector.png");
@@ -201,8 +208,9 @@ void Menu::menuBoucle() {
         while (SDL_PollEvent(&evenement)) {
             if (evenement.type == SDL_QUIT) {
                 terminer = true;
+                return true;
             }
-            gererEvenements(evenement);
+            quit = gererEvenements(evenement);
         }
         // Affichage du menu
         afficher(obtenirChoix());
@@ -215,4 +223,5 @@ void Menu::menuBoucle() {
             terminer = true;
         }
     }
+    return quit;
 }
